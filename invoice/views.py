@@ -95,10 +95,10 @@ def view_PDF(request, id=None):
 
     context = {
         "company": {
-            "name": "Ibrahim Services",
-            "address" :"67542 Jeru, Chatsworth, CA 92145, US",
-            "phone": "(818) XXX XXXX",
-            "email": "contact@ibrahimservice.com",
+            "name": "Tecnicyl",
+            "address" :"Buenos Aires 1322 - Río Cuarto, Córdoba - CP 5800",
+            "phone": "(358) 46 22322",
+            "email": "tecnicyl@tecnicyl.com.ar",
         },
         "invoice_id": invoice.id,
         "invoice_total": invoice.total_amount,
@@ -117,7 +117,7 @@ def generate_PDF(request, id):
     # Use False instead of output path to save pdf to a variable
     pdf = pdfkit.from_url(request.build_absolute_uri(reverse('invoice:invoice-detail', args=[id])), False)
     response = HttpResponse(pdf,content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="invoice.pdf"'
+    response['Content-Disposition'] = 'attachment; filename="factura.pdf"'
 
     return response
 
