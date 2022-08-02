@@ -5,23 +5,23 @@ class InvoiceForm(forms.Form):
     
         # fields = ['customer', 'message']
     customer = forms.CharField(
-        label='Cusomter',
+        label='Cliente',
         widget=forms.TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'Customer/Company Name',
+            'placeholder': 'Cliente',
             'rows':1
         })
     )
     customer_email = forms.CharField(
-        label='Customer Email',
+        label='Email',
         widget=forms.TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'customer@company.com',
+            'placeholder': 'cliente@compania.com',
             'rows':1
         })
     )
     billing_address = forms.CharField(
-        label='Billing Address',
+        label='Direccion',
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': '',
@@ -29,10 +29,10 @@ class InvoiceForm(forms.Form):
         })
     )
     message = forms.CharField(
-        label='Message/Note',
+        label='Observacion',
         widget=forms.TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'message',
+            'placeholder': 'observacion',
             'rows':1
         })
     )
@@ -40,32 +40,32 @@ class InvoiceForm(forms.Form):
 class LineItemForm(forms.Form):
     
     service = forms.CharField(
-        label='Service/Product',
+        label='Servicio/Producto',
         widget=forms.TextInput(attrs={
             'class': 'form-control input',
-            'placeholder': 'Service Name'
+            'placeholder': 'Servicio - Producto'
         })
     )
     description = forms.CharField(
-        label='Description',
+        label='Descripcion',
         widget=forms.TextInput(attrs={
             'class': 'form-control input',
-            'placeholder': 'Enter Book Name here',
+            'placeholder': 'descripcion',
             "rows":1
         })
     )
     quantity = forms.IntegerField(
-        label='Qty',
+        label='Cantidad',
         widget=forms.TextInput(attrs={
             'class': 'form-control input quantity',
-            'placeholder': 'Quantity'
+            'placeholder': 'Cantidad'
         }) #quantity should not be less than one
     )
     rate = forms.DecimalField(
-        label='Rate $',
+        label='Precio $',
         widget=forms.TextInput(attrs={
             'class': 'form-control input rate',
-            'placeholder': 'Rate'
+            'placeholder': 'Precio'
         })
     )
     # amount = forms.DecimalField(
